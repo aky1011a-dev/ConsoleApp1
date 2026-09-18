@@ -277,7 +277,15 @@ namespace Code
                         char[] boats = { 'C', 'B', 'c', 'S', 'D' };
                         int[] boat_sizes = { 5, 4, 3, 3, 2 };
 
-
+                        List<int> ran_seed = new List<int>();
+                        for (int i = 0; i < 40; i++)
+                        {
+                            ran_seed.Add(1)
+                        }
+                        for (int i = 0; i < 40; i++)
+                        {
+                            ran_seed.Add(0)
+                        }
 
                         // add boats
 
