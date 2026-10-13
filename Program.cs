@@ -1,19 +1,36 @@
+using system;
+
 namespace Programming_Qs___1
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter a whole number: ");
-            int Number1 = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Enter another whole number: ");
-            int Number2 = Convert.ToInt32(Console.ReadLine());
-            int Temp1 = Number1;
-            int Temp2 = Number2;
-            while (Temp1 != Temp2)
+            Console.Write("Original text: ");
+            string text = Console.ReadLine();
+            string compressed = "";
+            for (int i = 0; i < text.Length; i++)
             {
-
+                int counter = 0;
+                char letter = text[i];
+                compressed += Convert.ToString(letter);
+                int j = i + 1;
+                counter = 1;
+                while (j < text.Length -1)
+                {
+                    if (text[j] == letter)
+                    {
+                        counter++;
+                        j++;
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+                compressed += " " + Convert.ToString(counter);
             }
+            Console.WriteLine($"Compressed text: {compressed}");
         }
     }
 }
