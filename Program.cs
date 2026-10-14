@@ -1,4 +1,3 @@
-using system;
 
 namespace Programming_Qs___1
 {
@@ -6,31 +5,30 @@ namespace Programming_Qs___1
     {
         static void Main(string[] args)
         {
-            Console.Write("Original text: ");
-            string text = Console.ReadLine();
-            string compressed = "";
-            for (int i = 0; i < text.Length; i++)
+            Console.WriteLine("Player One enter your chosen number : ");
+            int NumberToGuess = Convert.ToInt32(Console.ReadLine());
+            while (NumberToGuess < 1 || NumberToGuess > 10)
             {
-                int counter = 0;
-                char letter = text[i];
-                compressed += Convert.ToString(letter);
-                int j = i + 1;
-                counter = 1;
-                while (j < text.Length -1)
-                {
-                    if (text[j] == letter)
-                    {
-                        counter++;
-                        j++;
-                    }
-                    else
-                    {
-                        break;
-                    }
-                }
-                compressed += " " + Convert.ToString(counter);
+            	Console.WriteLine("Not a valid choice, please enter another number: ");
+            	NumberToGuess = Convert.ToInt32(Console.ReadLine());
             }
-            Console.WriteLine($"Compressed text: {compressed}");
+            int guess = 0;
+            int NumberOfGuesses = 0;
+            while (Guess != NumberToGuess && NumberOfGuesses < 5)
+            {
+            	Console.WriteLine("Player Two have a guess: ");
+            	Guess = Convert.ToInt32(Console.ReadLine());
+            	NumberOfGuesses++;
+            }
+            if (Guess == NumberToGuess)
+            {
+            	Console.WriteLine("Player Two wins");
+            }
+            else
+            {
+            	Console.WriteLine("Player One wins");
+            }
+
         }
     }
 }
